@@ -1,0 +1,104 @@
+body { padding-top: 56px; }
+.left-aligned { margin-left: auto; }
+.bg-dark { background-color: #377083 !important; }
+.bg-hero { background-color: #45b06cff; }
+.bg-grp_photo {background-image: url('https://gitlab.igem.org/2023/hk-joint-school/-/raw/main/wiki/pages/wiki_images/Group_photo.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;}
+
+/* CALLOUT */
+.bd-callout { padding:1.25rem; margin-top:1.25rem; margin-bottom:1.25rem; border:1px solid #e9ecef; border-left-width:.25rem; border-radius:.25rem }
+.bd-callout h4 { margin-bottom:.25rem }
+.bd-callout p:last-child { margin-bottom:0 }
+.bd-callout code { border-radius:.25rem }
+.bd-callout+.bd-callout { margin-top:-.25rem }
+.bd-callout-info { border-left-color:#5bc0de }
+.bd-callout-warning { border-left-color:#f0ad4e }
+.bd-callout-danger { border-left-color:#d9534f }
+
+/* footer */
+footer a { color: white; font-weight: bold; text-decoration: none; }
+footer a:hover { color: white; text-decoration: underline; }
+
+/* menu */
+nav {
+	background-color: rgb(66, 170, 103) !important;
+}
+
+.navbar-collapse {
+	flex-grow: unset !important;
+}
+
+.navbar-nav {
+	align-items: end;
+}
+
+.nav-item, .navbar-brand {
+  margin: 0px 10px 0px 10px;
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.nav-item:hover {
+	color: rgba(0, 0, 0, 0.55) !important;
+}
+
+.nav-link {
+  padding: 16px 0px 16px 0px;
+  font-weight: 600;
+}
+
+.dropdown-menu {
+	border-radius: 0px 0px 16px 16px;
+}
+
+/* header */
+header {
+	background-color: rgb(126, 173, 140);
+	width: 100%;
+}
+
+.no {
+	padding: 0px !important;
+	margin: 0px !important;
+}
+
+
+
+
+#progress-bar {
+  width: 0;
+  height: 5px;
+  background-color: blue;
+  position: fixed;
+  top: 84px;
+  z-index: 9999;
+}
+
+body {
+	padding-top: 56px;
+	background-color: #ffffff;
+	font-family:'Kanit', sans-serif;
+	font-weight: normal;
+}
+
+h1, h2 {
+	font-family:'Kanit', sans-serif;
+	font-weight: bold;
+}
+
+/* back-to-top */
+
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* Hide the button by default */
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}

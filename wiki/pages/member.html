@@ -1,0 +1,56 @@
+{% extends "layout.html" %} {% block title %}
+<div id="member-header" style="text-align: center">OUR TEAM -</div>
+{% endblock %} {% block lead %}{% endblock %} {% block page_content %}
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  href="{{ url_for('static', filename = 'style-s.css') }}"
+  rel="stylesheet"
+/>
+
+<div>
+  <template id="team-member-template" class="members_row">
+    <img
+      class="member_img"
+      src="https://static.igem.wiki/teams/5056/wiki/wiki-images/"
+    />
+  </template>
+</div>
+
+<div id="members"></div>
+
+<script>
+  const team = "{{ id }}";
+  document.getElementById(
+    "member-header"
+  ).innerText += ` ${team.toUpperCase()}`;
+  console.log(team);
+
+  function addMember(img) {
+    const template = document.getElementById("team-member-template");
+    const teamMember = template.content.cloneNode(true);
+
+    teamMember.querySelector("img").src += `${team}/${img}.jpeg`;
+
+    document.getElementById("members").appendChild(teamMember);
+  }
+
+  [
+    "wongtszyeung",
+    "jimmysu",
+    "chengtsunkiu",
+    "kwanhochit",
+    "leeyin",
+    "leunghoyin",
+    "lilokyee",
+    "mahiuching",
+    "ngantszhang",
+    "tsangkwokwai",
+    "wongkichi",
+    "xujackson",
+    "xuyatfan",
+  ].map(addMember);
+</script>
+
+{% endblock %}

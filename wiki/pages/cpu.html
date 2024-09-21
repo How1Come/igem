@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {% block title %}Team members{% endblock %} {% block
+lead%}Here are our members!{% endblock %} {% block page_content %}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  href="{{ url_for('static', filename = 'style-s.css') }}"
+  rel="stylesheet"
+/>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    .container1 {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .member {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .member img {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 15px;
+      display: block;
+    }
+
+    .member p {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .member strong {
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container1">
+    <div class="member">
+      <img src="images.jpg" alt="Member 1" />
+      <!-- change member photo here -->
+      <p><strong>Member 1</strong><br />Introduction for Member 1 goes here.</p>
+    </div>
+    <div class="member">
+      <img src="images.jpg" alt="Member 2" />
+      <p><strong>Member 2</strong><br />Introduction for Member 2 goes here.</p>
+    </div>
+    <div class="member">
+      <img src="images.jpg" alt="Member 3" />
+      <p><strong>Member 3</strong><br />Introduction for Member 3 goes here.</p>
+    </div>
+    <!-- Add more member -->
+  </div>
+</body>
+{% endblock %}

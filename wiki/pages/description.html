@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+  
+{% block title %}<h1 style="text-align: center; font-size: 42px; font-weight: bold;">Description</h1>{% endblock %}
+{% block lead %}{% endblock %}
+
+{% block page_content %}
+<link href="{{ url_for('static', filename = 'style-s.css') }}" rel="stylesheet">
+
+
+<div class="sidebar">
+	<p style="text-align: center; font-size: 36px; font-weight: bold;">Description</p>
+		<ul>
+			<li><a href="#des-1">Abstract</a></li>
+			<li><a href="#des-2">Defining the Problems</a></li>
+			<li><a href="#des-3">Inspiration</a></li>
+			<li><a href="#des-5">Our Approach</a></li>
+			<li><a href="#des-6">Our Goal</a></li> 
+		</ul>
+</div>
+
+
+<div class="rcontainer">
+  <div class="row mt-4">
+    <div>
+      <h1 class="animate__animated" id="des-1">Abstract :</h1>
+      <hr>
+      <p>Our team aims to produce two different types of engineered proteins to target lung cancer cells and check for whether two groups of peptides have any synergic effects with doxorubicin. </p>
+      <p>Lung cancer was the commonest cancer in Hong Kong. It accounted for 15.5% of new cancer cases in 2021 in Hong Kong. Galectin is a common receptor of lung cancer cell. </p>
+      <p>We used AI-algorithm to generate peptide sequences by targeting galectin receptor on lung cancer cell membrane.  </p>
+      <p>Moreover, 4 peptides from Cordyceps militaris, a well‐known dietary therapy in anticancer treatment, have been selected to test their effectiveness to lung cancer. </p>
+      <p>Then, those peptides have been expressed by BL21. Finally, A549, a lung cancer cell line, has been used to test the effectiveness of those peptides and check for whether two groups of peptides have any synergic effects with doxorubicin, a common chemotherapy medication used to treat cancer.</p>
+      <p>If there are synergic effects, lower concentration of doxorubicin can be used, so that it can reduce the side effects of it. </p>  
+    </div>
+  </div>
+</div>
+
+  
+
+{% endblock %}

@@ -1,0 +1,236 @@
+{% extends "layout.html" %}
+{% block title %}Team{% endblock %}
+{% block lead %}List of schools and their team members.{% endblock %}
+{% block page_content %}
+
+<link href="{{ url_for('static', filename = 'style-s.css') }}" rel="stylesheet" />
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Table Cell</title>
+  <style>
+    .photo-cell {
+      border: 2px solid black;
+      padding: 0; 
+      text-align: center;
+      width: 250px;
+      height: 230px;
+      vertical-align: top; 
+    }
+    .school-logo {
+      border: none;
+      width: 100%;
+      height: 90%;
+      display: block; 
+    }
+    .member-photo {
+      border: none;
+      width: 100%; 
+      height: 100%; 
+      display: block; 
+    }
+    .description {
+      margin-top: 5px;
+      font-size: 15px;
+      height: 20%; 
+      overflow: hidden;
+    }
+    .flip-box {
+      background-color: transparent;
+      width: 200px;
+      height: 200px;
+      perspective: 1000px; 
+    }
+    .flip-box-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .flip-box:hover .flip-box-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-box-front,
+    .flip-box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    .flip-box-front {
+      background-color: #fff;
+      color: black;
+    }
+    .flip-box-back {
+      background-color: #fff;
+      color: black;
+      transform: rotateY(180deg);
+    }
+    table {
+      margin: 0 auto; 
+    }
+  </style>
+</head>
+<body>
+  {% set base_url = "https://static.igem.wiki/teams/5056/wiki/wiki-images/" %}
+  {% set photo_url = "https://static.igem.wiki/teams/5056/wiki/wiki-images/cpu/" %}
+  {% set photo_url2 = "https://static.igem.wiki/teams/5056/wiki/wiki-images/wyy/" %}
+  {% set photo_url3 = "https://static.igem.wiki/teams/5056/wiki/wiki-images/ktls/" %}
+  {% set photo_url4 = "https://static.igem.wiki/teams/5056/wiki/wiki-images/hpc/" %}
+  {% set photo_url5 = "https://static.igem.wiki/teams/5056/wiki/wiki-images/lmc/" %}
+  {% set photo_url6 = "https://static.igem.wiki/teams/5056/wiki/wiki-images/hcy/" %}
+  {% set schools = [
+    {"name": "Carmel Pak U Secondary School", "url": "https://www.cpu.edu.hk", "photo": "cpu-logo.jpg", "team_photo": "cpu-team.jpg"},
+    {"name": "Kowloon True Light School", "url": "https://www.ktls.edu.hk/", "photo": "ktls-logo.jpg", "team_photo": "ktls-team.jpg"},
+    {"name": "Tsuen Wan Public Ho Chuen Yiu Memorial College", "url": "https://www.twphcymc.edu.hk/", "photo": "twphcymc-logo.png", "team_photo": "hcy-team.jpg"},
+    {"name": "TWGHs Mrs. Wu York Yu Memorial College", "url": "https://twghwyyms.edu.hk/", "photo": "twghwyyms-logo.jpg", "team_photo": "wyy-team.png"},
+    {"name": "Hoi Ping Chamber of Commerce Secondary School", "url": "https://www.hpccss.edu.hk/", "photo": "hpccss-logo.jpg", "team_photo": "hpc-team.jpg"},
+    {"name": "Baptist Lui Ming Choi Secondary School", "url": "https://www.blmcss.edu.hk/", "photo": "lmc-logo.png", "team_photo": "lmc-team.png"}
+  ] %}
+  {% set cpu_members = [
+    "wongtszyeung",
+    "jimmysu",
+    "chengtsunkiu",
+    "kwanhochit",
+    "leeyin",
+    "leunghoyin",
+    "lilokyee",
+    "mahiuching",
+    "ngantszhang",
+    "tsangkwokwai",
+    "wongkichi",
+    "xujackson",
+    "xuyatfan",
+    "luoyuenyikmark",
+    "shipokyiu",
+  ] %}
+  {% set wyy_members = [
+    "mr-wong",
+    "petermo",
+    "harrietyu",
+    "bellechow",
+    "heyden",
+    "ivanhuang",
+    "remili",
+    "sammimo",
+    "thomasman",
+  ] %}
+  {% set ktls_members = [
+    "mrchankwanwai",
+    "mswantszyan",
+    "chanhiunamisabella",
+    "fantsoiching",
+    "kongheitung",
+    "leechingyiuyuri",
+    "limtszching",
+    "tintszching",
+    "wongsumyee",
+    "youngthengsum",
+  ] %}
+  {% set hpc_members = [
+    "mshui",
+    "april-checked",
+    "billy-checked",
+    "cherry-checked",
+    "hanson-checked",
+    "tom-checked",
+    "tommy-checked",
+    "yolanda-checked",
+  ] %}
+  {% set lmc_members = [
+    "advisor-cheng-to-nga",
+    "advisor-lee-hoi-ying-alice",
+    "instructor-victoria-choi",
+    "student-leader-luk-chun-hei-marcus",
+    "student-leader-yeung-hoi-pok-skyler",
+    "member-belle-lok",
+    "member-cheng-yik-hang-henry",
+    "member-kowk-yee-him-joshua",
+    "member-lee-ching-chun-jade",
+    "member-ng-ting-fai-stanley",
+    "member-ngan-wing-tung-diana",
+    "member-sena-lau",
+    "member-shen-ziwen-shirley",
+    "member-siu-chun-fei-jeff",
+    "member-wong-ka-kit-anson",
+    "member-yu-yuet-hei-cathy",
+  ] %}
+  {% set hcy_members = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+  ] %}
+  <table>
+    <tr>
+      {% for school in schools %}
+      <td class="photo-cell">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img src="{{ base_url }}{{ school.photo }}" alt="Photo" class="school-logo">
+            </div>
+            <div class="flip-box-back">
+              <img src="{{ base_url }}{{ school.team_photo }}" alt="Team Photo" class="school-logo">
+            </div>
+          </div>
+        </div>
+        <div class="description">
+          <b><a href="{{ school.url }}" target="_blank">{{ school.name }}</a></b>
+        </div>
+      </td>
+      {% endfor %}
+    </tr>
+    {% for i in range(hcy_members|length) %}
+    <tr>
+      <td class="photo-cell">
+        {% if i < cpu_members|length %}
+          <img src="{{ photo_url }}{{ cpu_members[i] }}.jpeg" alt="Photo" class="member-photo">
+        {% endif %}
+      </td>
+      <td class="photo-cell">
+        {% if i < ktls_members|length %}
+          <img src="{{ photo_url3 }}{{ ktls_members[i] }}.png" alt="Photo" class="member-photo">
+        {% endif %}
+      </td>
+      <td class="photo-cell">
+        <img src="{{ photo_url6 }}{{ hcy_members[i] }}.jpg" alt="Photo" class="member-photo">
+      </td>
+      <td class="photo-cell">
+        {% if i < wyy_members|length %}
+          <img src="{{ photo_url2 }}{{ wyy_members[i] }}.png" alt="Photo" class="member-photo">
+        {% endif %}
+      </td>
+      <td class="photo-cell">
+        {% if i < hpc_members|length %}
+          <img src="{{ photo_url4 }}{{ hpc_members[i] }}.png" alt="Photo" class="member-photo">
+        {% endif %}
+      </td>
+      <td class="photo-cell">
+        {% if i < lmc_members|length %}
+          <img src="{{ photo_url5 }}{{ lmc_members[i] }}.png" alt="Photo" class="member-photo">
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}
+</body>
+

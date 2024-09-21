@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+  
+{% block title %}Experiments{% endblock %}
+{% block lead %}{% endblock %}
+
+{% block page_content %}
+<center><h1>Experiment Flow</h1></center>
+
+<div class="rcontainer">
+ <div class="row mt-4">
+    <img src="https://static.igem.wiki/teams/5056/wiki/wyy/ef-v3.png" style="height: 1024px ;width: 1780px;"/>
+  </div>
+ </div>
+
+ <div class="rcontainer">
+  <div class="row mt-4"> 
+    <p>                          </p>
+    <h2>Step 1: Plasmid construction</h2>
+     <div class="bd-callout bd-callout-info">
+        <h5>ii) pET plasmid-<i>Cordyceps militars</i> ACPs and pET plasmid AC-P19 construction</h5>
+        <p>Before digestion and ligation, all plasmids are amplified by DH5-alpha bacterial culture and purified by miniprep. Next, SacI and NdeI were used to cut open the pET plasmid</p>
+     </div>   
+       <hr>
+    <h2>Step 2: Transformation</h2>
+      <div class="bd-callout bd-callout-info">
+        <h5>Transformation</h5>
+        <p>SacI and NdeI were used to digest the pET plasmid and all ACP inserts and both fragments were ligated to form different pET-ACPs respectively. The recombinant plasmid first was transformed in DH5-alpha for cloning. And then, the plasmid was transformed in BL21 after the ‘Step 3: Colony PCR’.</p>
+      </div>
+        <hr>
+    <h2>Step 3: Colony PCR</h2>
+      <div class="bd-callout bd-callout-info">
+        <h5>Colony PCR </h5>
+        <p>To confirm whether the bacteria in colony get the correct plasmid, colony PCR was conducted. We designed some primers for colony PCR. Details show below </p>
+        <img src="https://static.igem.wiki/teams/5056/wiki/wyy/whatsapp-2024-09-1502-54-49-9ed0dd04.jpg" height="75"/>
+      </div>  
+        <hr>
+    <h2>Step 4: Protein expression</h2>
+      <div class="bd-callout bd-callout-info">
+        <h5>Protein expression-ACP19</h5>
+        <p>A single colony was picked up and incubated in 50ml LB broth containing kanamycin(1X) at 37℃ with 150rpm shaking overnight. A total of 2.5ml incubated cell culture was then incubated into 50ml LB broth containing kanamycin(1X) at 37℃ with 150rpm shaking until the OD600 reached 0.6. Then, 200mM IPTG was used to induce the protein expression for 24 hours at 20℃. </p>
+      </div>
+        <hr>
+    <h2>Step 5: Purification-ACP19</h2>
+      <div class="bd-callout bd-callout-info">
+        <p><b>SDS-PAGE</b></p>
+        <p>SDS-PAGE would be conducted to test did the expression be induced successfully and estimate the protein concentration. </p>
+      </div>
+     <div class="bd-callout bd-callout-info">
+        <p><b>His tag purification</b></p>
+        <p>If target bands have been shown in SDS-PAGE results, the corresponding supernatant samples will undergo his tag purification. After that, another SDS-PAGE will be conducted to confirm whether the ACPs were purified.</p>
+     </div>
+     <div class="bd-callout bd-callout-info">
+        <p><b>Increase concentration of protein</b></p>
+        <p>To increase the concentration of the peptide. We used the Amicon Ultra-0.5 mL Centrifugal Filters for Protein Purification and Concentration. 500 µL of sample were added to the Amicon Ultra filter device, which is then placed into the centrifuge rotor. The device was spun at 14,000×g for 20mins. After that, the assembled device was removed from the centrifuge and the Amicon Ultra filter device was separated from the microcentrifuge tube. To recover the concentrated solute, the Amicon Ultra filter device was placed upside down in a clean microcentrifuge tube and placed in centrifuge. To transfer the concentrated sample from the device to the tube, it is spun for 2 minutes at 1,000×g.</p>
+     </div>
+         <hr>
+  </div>
+</div>
+{% endblock %}
